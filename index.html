@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Scraper - Blog Style</title>
+    
+    <!-- Bootstrap CSS for responsive design -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Header Section -->
+        <header class="header-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="main-title">
+                            <i class="fas fa-quote-left"></i> 
+                            Quotes Scraper
+                        </h1>
+                        <p class="subtitle">Discover inspiring quotes from famous authors and thinkers</p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <button id="exportBtn" class="btn btn-success btn-lg">
+                            <i class="fas fa-download"></i> Export to CSV
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Control Section -->
+        <div class="control-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Search quotes, authors, or tags...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="filter-controls">
+                            <select id="tagFilter" class="form-select">
+                                <option value="">All Tags</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="loading-section text-center d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Scraping quotes from the website...</p>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <h3 id="totalQuotes">0</h3>
+                            <p>Total Quotes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <h3 id="totalAuthors">0</h3>
+                            <p>Unique Authors</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <h3 id="totalTags">0</h3>
+                            <p>Unique Tags</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <h3 id="filteredQuotes">0</h3>
+                            <p>Filtered Quotes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quotes Blog List -->
+        <div class="quotes-section">
+            <div class="container">
+                <div id="quotesContainer" class="row">
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination-section text-center mt-4">
+                    <button id="prevPage" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <span id="pageInfo" class="mx-3">Page 1</span>
+                    <button id="nextPage" class="btn btn-outline-primary ms-2">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Export Progress Modal -->
+        <div class="modal fade" id="exportModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Exporting Quotes</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="progress">
+                            <div id="exportProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                        </div>
+                        <p id="exportStatus" class="mt-2">Preparing data...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

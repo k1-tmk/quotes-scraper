@@ -1,0 +1,44 @@
+{
+  "name": "quotes-scraper",
+  "version": "1.0.0",
+  "description": "A modern web application that scrapes inspirational quotes and displays them in a blog-style format with CSV export functionality",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "start:node": "npx http-server -p 3000",
+    "start:php": "php -S localhost:3000",
+    "dev": "python -m http.server 3000"
+  },
+  "keywords": [
+    "web-scraping",
+    "quotes",
+    "data-extraction",
+    "csv-export",
+    "javascript",
+    "bootstrap",
+    "responsive-design",
+    "blog-layout",
+    "search-filter",
+    "pagination"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manhkhoa/quotes-scraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manhkhoa/quotes-scraper/issues"
+  },
+  "homepage": "https://github.com/manhkhoa/quotes-scraper#readme",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
